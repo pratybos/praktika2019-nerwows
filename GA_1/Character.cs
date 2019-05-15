@@ -16,11 +16,13 @@
             currentlyEqquiped = -1;
 
             Ammo = 0;
-            Money = 0;
+            Money = 1000;
             Experience = 0;
             Health = 5;
 
             charID = -1;
+
+            Name = "";
         }
 
         //Weapons
@@ -33,12 +35,18 @@
         public bool hasAK47 { get; set; } //6
         public bool hasMinigun { get; set; } //7
         public bool hasBazooka { get; set; } //8
-        
+
+        //
+        public string Name { get; set; }
+
         public int Ammo { get; set; }
         public int Money { get; set; }
         public int Experience { get; set; }
         public int Health { get; set; }
         public int healthPack { get; set; }
+        public int killCount { get; set; }
+        public int lootboxCount { get; set; }
+        public int carCount { get; set; }
 
         public int currentlyEqquiped { get; set; }
 

@@ -33,6 +33,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel_Map = new System.Windows.Forms.Panel();
             this.panel_city = new System.Windows.Forms.Panel();
+            this.progressBar4 = new System.Windows.Forms.ProgressBar();
+            this.progressBar3 = new System.Windows.Forms.ProgressBar();
+            this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.panel_shop = new System.Windows.Forms.Panel();
             this.panel_inventory = new System.Windows.Forms.Panel();
             this.pictureBox_invnetory_axe = new System.Windows.Forms.PictureBox();
@@ -56,11 +60,11 @@
             this.label_deagle_price = new System.Windows.Forms.Label();
             this.pictureBox_shop_ammo = new System.Windows.Forms.PictureBox();
             this.pictureBox_shop_bazooka = new System.Windows.Forms.PictureBox();
-            this.pictureBox_shop_minigun = new System.Windows.Forms.PictureBox();
-            this.pictureBox_shop_ak47 = new System.Windows.Forms.PictureBox();
             this.pictureBox_shop_smg = new System.Windows.Forms.PictureBox();
             this.pictureBox_shop_deagle = new System.Windows.Forms.PictureBox();
             this.pictureBox_shopGOBACK = new System.Windows.Forms.PictureBox();
+            this.pictureBox_shop_minigun = new System.Windows.Forms.PictureBox();
+            this.pictureBox_shop_ak47 = new System.Windows.Forms.PictureBox();
             this.panelHUD = new System.Windows.Forms.Panel();
             this.label_ammo = new System.Windows.Forms.Label();
             this.picturebox_ammo = new System.Windows.Forms.PictureBox();
@@ -98,12 +102,13 @@
             this.button_cVagis = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.bContinueOldGame = new System.Windows.Forms.Button();
             this.bStartNewGame = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.progressBar2 = new System.Windows.Forms.ProgressBar();
-            this.progressBar3 = new System.Windows.Forms.ProgressBar();
-            this.progressBar4 = new System.Windows.Forms.ProgressBar();
+            this.pictureBox_fire1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_fire2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_fire3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_fire4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_shop_healthpack = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel_Map.SuspendLayout();
@@ -124,11 +129,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_shop_gold)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_shop_ammo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_shop_bazooka)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_shop_minigun)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_shop_ak47)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_shop_smg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_shop_deagle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_shopGOBACK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_shop_minigun)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_shop_ak47)).BeginInit();
             this.panelHUD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_ammo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_gold)).BeginInit();
@@ -150,6 +155,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_mapChar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_city)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_shop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_fire1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_fire2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_fire3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_fire4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_shop_healthpack)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -157,7 +167,6 @@
             this.panel1.BackgroundImage = global::GA_1.Properties.Resources.zombieland;
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.bContinueOldGame);
             this.panel1.Controls.Add(this.bStartNewGame);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -195,6 +204,7 @@
             this.panel_Map.Controls.Add(this.pictureBox_mapChar);
             this.panel_Map.Controls.Add(this.pictureBox_city);
             this.panel_Map.Controls.Add(this.pictureBox_shop);
+            this.panel_Map.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Map.Location = new System.Drawing.Point(0, 0);
             this.panel_Map.Name = "panel_Map";
             this.panel_Map.Size = new System.Drawing.Size(784, 561);
@@ -204,10 +214,6 @@
             // 
             this.panel_city.BackgroundImage = global::GA_1.Properties.Resources.city;
             this.panel_city.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel_city.Controls.Add(this.progressBar4);
-            this.panel_city.Controls.Add(this.progressBar3);
-            this.panel_city.Controls.Add(this.progressBar2);
-            this.panel_city.Controls.Add(this.progressBar1);
             this.panel_city.Controls.Add(this.panel_shop);
             this.panel_city.Controls.Add(this.panelHUD);
             this.panel_city.Controls.Add(this.pictureBox_zombie4);
@@ -220,12 +226,48 @@
             this.panel_city.Controls.Add(this.pictureBox_car3);
             this.panel_city.Controls.Add(this.pictureBox_car2);
             this.panel_city.Controls.Add(this.pictureBox_car1);
+            this.panel_city.Controls.Add(this.pictureBox_fire4);
+            this.panel_city.Controls.Add(this.pictureBox_fire3);
+            this.panel_city.Controls.Add(this.pictureBox_fire2);
+            this.panel_city.Controls.Add(this.pictureBox_fire1);
+            this.panel_city.Controls.Add(this.progressBar4);
+            this.panel_city.Controls.Add(this.progressBar3);
+            this.panel_city.Controls.Add(this.progressBar2);
+            this.panel_city.Controls.Add(this.progressBar1);
             this.panel_city.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_city.Location = new System.Drawing.Point(0, 0);
             this.panel_city.Name = "panel_city";
             this.panel_city.Size = new System.Drawing.Size(784, 561);
             this.panel_city.TabIndex = 3;
             this.panel_city.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_city_Paint);
+            // 
+            // progressBar4
+            // 
+            this.progressBar4.Location = new System.Drawing.Point(708, 503);
+            this.progressBar4.Name = "progressBar4";
+            this.progressBar4.Size = new System.Drawing.Size(31, 10);
+            this.progressBar4.TabIndex = 13;
+            // 
+            // progressBar3
+            // 
+            this.progressBar3.Location = new System.Drawing.Point(671, 503);
+            this.progressBar3.Name = "progressBar3";
+            this.progressBar3.Size = new System.Drawing.Size(31, 10);
+            this.progressBar3.TabIndex = 12;
+            // 
+            // progressBar2
+            // 
+            this.progressBar2.Location = new System.Drawing.Point(634, 502);
+            this.progressBar2.Name = "progressBar2";
+            this.progressBar2.Size = new System.Drawing.Size(31, 10);
+            this.progressBar2.TabIndex = 11;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(597, 502);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(31, 10);
+            this.progressBar1.TabIndex = 10;
             // 
             // panel_shop
             // 
@@ -242,11 +284,13 @@
             this.panel_shop.Controls.Add(this.label_deagle_price);
             this.panel_shop.Controls.Add(this.pictureBox_shop_ammo);
             this.panel_shop.Controls.Add(this.pictureBox_shop_bazooka);
-            this.panel_shop.Controls.Add(this.pictureBox_shop_minigun);
-            this.panel_shop.Controls.Add(this.pictureBox_shop_ak47);
             this.panel_shop.Controls.Add(this.pictureBox_shop_smg);
             this.panel_shop.Controls.Add(this.pictureBox_shop_deagle);
             this.panel_shop.Controls.Add(this.pictureBox_shopGOBACK);
+            this.panel_shop.Controls.Add(this.pictureBox_shop_minigun);
+            this.panel_shop.Controls.Add(this.pictureBox_shop_ak47);
+            this.panel_shop.Controls.Add(this.label11);
+            this.panel_shop.Controls.Add(this.pictureBox_shop_healthpack);
             this.panel_shop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_shop.Location = new System.Drawing.Point(0, 0);
             this.panel_shop.Name = "panel_shop";
@@ -519,30 +563,6 @@
             this.pictureBox_shop_bazooka.TabStop = false;
             this.pictureBox_shop_bazooka.Click += new System.EventHandler(this.pictureBox_shop_bazooka_Click);
             // 
-            // pictureBox_shop_minigun
-            // 
-            this.pictureBox_shop_minigun.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox_shop_minigun.BackgroundImage = global::GA_1.Properties.Resources.minigun;
-            this.pictureBox_shop_minigun.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox_shop_minigun.Location = new System.Drawing.Point(132, 205);
-            this.pictureBox_shop_minigun.Name = "pictureBox_shop_minigun";
-            this.pictureBox_shop_minigun.Size = new System.Drawing.Size(144, 60);
-            this.pictureBox_shop_minigun.TabIndex = 4;
-            this.pictureBox_shop_minigun.TabStop = false;
-            this.pictureBox_shop_minigun.Click += new System.EventHandler(this.pictureBox_shop_minigun_Click);
-            // 
-            // pictureBox_shop_ak47
-            // 
-            this.pictureBox_shop_ak47.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox_shop_ak47.BackgroundImage = global::GA_1.Properties.Resources.ak47;
-            this.pictureBox_shop_ak47.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox_shop_ak47.Location = new System.Drawing.Point(375, 83);
-            this.pictureBox_shop_ak47.Name = "pictureBox_shop_ak47";
-            this.pictureBox_shop_ak47.Size = new System.Drawing.Size(64, 60);
-            this.pictureBox_shop_ak47.TabIndex = 3;
-            this.pictureBox_shop_ak47.TabStop = false;
-            this.pictureBox_shop_ak47.Click += new System.EventHandler(this.pictureBox_shop_ak47_Click);
-            // 
             // pictureBox_shop_smg
             // 
             this.pictureBox_shop_smg.BackColor = System.Drawing.Color.Transparent;
@@ -578,6 +598,31 @@
             this.pictureBox_shopGOBACK.TabIndex = 0;
             this.pictureBox_shopGOBACK.TabStop = false;
             this.pictureBox_shopGOBACK.Click += new System.EventHandler(this.pictureBox_shopGOBACK_Click);
+            // 
+            // pictureBox_shop_minigun
+            // 
+            this.pictureBox_shop_minigun.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_shop_minigun.BackgroundImage = global::GA_1.Properties.Resources.minigun;
+            this.pictureBox_shop_minigun.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox_shop_minigun.Location = new System.Drawing.Point(132, 205);
+            this.pictureBox_shop_minigun.Name = "pictureBox_shop_minigun";
+            this.pictureBox_shop_minigun.Size = new System.Drawing.Size(144, 60);
+            this.pictureBox_shop_minigun.TabIndex = 16;
+            this.pictureBox_shop_minigun.TabStop = false;
+            this.pictureBox_shop_minigun.Click += new System.EventHandler(this.pictureBox_shop_minigun_Click_1);
+            // 
+            // pictureBox_shop_ak47
+            // 
+            this.pictureBox_shop_ak47.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_shop_ak47.BackgroundImage = global::GA_1.Properties.Resources.ak47;
+            this.pictureBox_shop_ak47.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox_shop_ak47.Location = new System.Drawing.Point(377, 83);
+            this.pictureBox_shop_ak47.Name = "pictureBox_shop_ak47";
+            this.pictureBox_shop_ak47.Size = new System.Drawing.Size(64, 60);
+            this.pictureBox_shop_ak47.TabIndex = 17;
+            this.pictureBox_shop_ak47.TabStop = false;
+            this.pictureBox_shop_ak47.Click += new System.EventHandler(this.pictureBox_shop_ak47_Click_1);
+            this.pictureBox_shop_ak47.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox_shop_ak47_MouseClick);
             // 
             // panelHUD
             // 
@@ -981,19 +1026,9 @@
             this.label1.Text = "Zombieland";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // bContinueOldGame
-            // 
-            this.bContinueOldGame.Location = new System.Drawing.Point(256, 309);
-            this.bContinueOldGame.Name = "bContinueOldGame";
-            this.bContinueOldGame.Size = new System.Drawing.Size(327, 75);
-            this.bContinueOldGame.TabIndex = 1;
-            this.bContinueOldGame.Text = "Tęsti seną žaidimą";
-            this.bContinueOldGame.UseVisualStyleBackColor = true;
-            this.bContinueOldGame.Click += new System.EventHandler(this.bContinueOldGame_Click);
-            // 
             // bStartNewGame
             // 
-            this.bStartNewGame.Location = new System.Drawing.Point(256, 228);
+            this.bStartNewGame.Location = new System.Drawing.Point(256, 262);
             this.bStartNewGame.Name = "bStartNewGame";
             this.bStartNewGame.Size = new System.Drawing.Size(327, 75);
             this.bStartNewGame.TabIndex = 0;
@@ -1001,33 +1036,71 @@
             this.bStartNewGame.UseVisualStyleBackColor = true;
             this.bStartNewGame.Click += new System.EventHandler(this.button1_Click);
             // 
-            // progressBar1
+            // pictureBox_fire1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(597, 502);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(31, 10);
-            this.progressBar1.TabIndex = 10;
+            this.pictureBox_fire1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_fire1.Image = global::GA_1.Properties.Resources.fire;
+            this.pictureBox_fire1.Location = new System.Drawing.Point(597, 454);
+            this.pictureBox_fire1.Name = "pictureBox_fire1";
+            this.pictureBox_fire1.Size = new System.Drawing.Size(31, 42);
+            this.pictureBox_fire1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_fire1.TabIndex = 14;
+            this.pictureBox_fire1.TabStop = false;
             // 
-            // progressBar2
+            // pictureBox_fire2
             // 
-            this.progressBar2.Location = new System.Drawing.Point(634, 502);
-            this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(31, 10);
-            this.progressBar2.TabIndex = 11;
+            this.pictureBox_fire2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_fire2.Image = global::GA_1.Properties.Resources.fire;
+            this.pictureBox_fire2.Location = new System.Drawing.Point(634, 454);
+            this.pictureBox_fire2.Name = "pictureBox_fire2";
+            this.pictureBox_fire2.Size = new System.Drawing.Size(31, 42);
+            this.pictureBox_fire2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_fire2.TabIndex = 15;
+            this.pictureBox_fire2.TabStop = false;
             // 
-            // progressBar3
+            // pictureBox_fire3
             // 
-            this.progressBar3.Location = new System.Drawing.Point(671, 503);
-            this.progressBar3.Name = "progressBar3";
-            this.progressBar3.Size = new System.Drawing.Size(31, 10);
-            this.progressBar3.TabIndex = 12;
+            this.pictureBox_fire3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_fire3.Image = global::GA_1.Properties.Resources.fire;
+            this.pictureBox_fire3.Location = new System.Drawing.Point(671, 454);
+            this.pictureBox_fire3.Name = "pictureBox_fire3";
+            this.pictureBox_fire3.Size = new System.Drawing.Size(31, 42);
+            this.pictureBox_fire3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_fire3.TabIndex = 16;
+            this.pictureBox_fire3.TabStop = false;
             // 
-            // progressBar4
+            // pictureBox_fire4
             // 
-            this.progressBar4.Location = new System.Drawing.Point(708, 503);
-            this.progressBar4.Name = "progressBar4";
-            this.progressBar4.Size = new System.Drawing.Size(31, 10);
-            this.progressBar4.TabIndex = 13;
+            this.pictureBox_fire4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_fire4.Image = global::GA_1.Properties.Resources.fire;
+            this.pictureBox_fire4.Location = new System.Drawing.Point(708, 454);
+            this.pictureBox_fire4.Name = "pictureBox_fire4";
+            this.pictureBox_fire4.Size = new System.Drawing.Size(31, 42);
+            this.pictureBox_fire4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_fire4.TabIndex = 17;
+            this.pictureBox_fire4.TabStop = false;
+            // 
+            // pictureBox_shop_healthpack
+            // 
+            this.pictureBox_shop_healthpack.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_shop_healthpack.BackgroundImage = global::GA_1.Properties.Resources.bloodpack;
+            this.pictureBox_shop_healthpack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox_shop_healthpack.Location = new System.Drawing.Point(287, 309);
+            this.pictureBox_shop_healthpack.Name = "pictureBox_shop_healthpack";
+            this.pictureBox_shop_healthpack.Size = new System.Drawing.Size(97, 68);
+            this.pictureBox_shop_healthpack.TabIndex = 18;
+            this.pictureBox_shop_healthpack.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(285, 379);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(40, 13);
+            this.label11.TabIndex = 19;
+            this.label11.Text = "Kaina: ";
             // 
             // Form1
             // 
@@ -1062,11 +1135,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_shop_gold)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_shop_ammo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_shop_bazooka)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_shop_minigun)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_shop_ak47)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_shop_smg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_shop_deagle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_shopGOBACK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_shop_minigun)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_shop_ak47)).EndInit();
             this.panelHUD.ResumeLayout(false);
             this.panelHUD.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_ammo)).EndInit();
@@ -1089,6 +1162,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_mapChar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_city)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_shop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_fire1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_fire2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_fire3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_fire4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_shop_healthpack)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1096,7 +1174,6 @@
         #endregion
 
         private System.Windows.Forms.Button bStartNewGame;
-        private System.Windows.Forms.Button bContinueOldGame;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
@@ -1142,8 +1219,8 @@
         private System.Windows.Forms.PictureBox pictureBox_shopGOBACK;
         private System.Windows.Forms.PictureBox pictureBox_shop_deagle;
         private System.Windows.Forms.PictureBox pictureBox_shop_smg;
-        private System.Windows.Forms.PictureBox pictureBox_shop_ak47;
-        private System.Windows.Forms.PictureBox pictureBox_shop_minigun;
+        //private System.Windows.Forms.PictureBox pictureBox_shop_minigun;
+        //private System.Windows.Forms.PictureBox pictureBox_shop_minigun;
         private System.Windows.Forms.PictureBox pictureBox_shop_bazooka;
         private System.Windows.Forms.PictureBox pictureBox_shop_ammo;
         private System.Windows.Forms.Label label_smg_price;
@@ -1170,6 +1247,14 @@
         private System.Windows.Forms.ProgressBar progressBar4;
         private System.Windows.Forms.ProgressBar progressBar3;
         private System.Windows.Forms.ProgressBar progressBar2;
+        private System.Windows.Forms.PictureBox pictureBox_shop_minigun;
+        private System.Windows.Forms.PictureBox pictureBox_shop_ak47;
+        private System.Windows.Forms.PictureBox pictureBox_fire4;
+        private System.Windows.Forms.PictureBox pictureBox_fire3;
+        private System.Windows.Forms.PictureBox pictureBox_fire2;
+        private System.Windows.Forms.PictureBox pictureBox_fire1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox pictureBox_shop_healthpack;
     }
 }
 

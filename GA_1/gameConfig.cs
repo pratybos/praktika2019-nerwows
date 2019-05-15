@@ -33,6 +33,7 @@ namespace GA_1
             SHOP_MINIGUN_PRICE = 1200;
             SHOP_BAZOOKA_PRICE = 2400;
             SHOP_AMMO_PRICE = 15;
+            SHOP_HEALTHPACK_PRICE = 20;
         }
 
         public int EXPERIENCE_CAR_CLICK { get; }
@@ -59,5 +60,6 @@ namespace GA_1
         public int SHOP_MINIGUN_PRICE { get; }
         public int SHOP_BAZOOKA_PRICE { get; }
         public int SHOP_AMMO_PRICE { get; }
+        public int SHOP_HEALTHPACK_PRICE { get; }
     }
 }
