@@ -7,3 +7,4 @@ C:\Users\nerwo\source\repos\GA_1\GA_1\obj\Debug\GA_1.csproj.GenerateResource.cac
 C:\Users\nerwo\source\repos\GA_1\GA_1\obj\Debug\GA_1.csproj.CoreCompileInputs.cache
 C:\Users\nerwo\source\repos\GA_1\GA_1\obj\Debug\GA_1.exe
 C:\Users\nerwo\source\repos\GA_1\GA_1\obj\Debug\GA_1.pdb
+C:\Users\nerwo\source\repos\GA_1\GA_1\obj\Debug\GA_1.csprojAssemblyReference.cache

@@ -16,13 +16,34 @@
             currentlyEqquiped = -1;
 
             Ammo = 0;
-            Money = 1000;
+            Money = 0;
             Experience = 0;
             Health = 5;
+
+            carCount = 0;
+            killCount = 0;
+            lootboxCount = 0;
+            healthPack = 0;
 
             charID = -1;
 
             Name = "";
+
+            achievement_Welcome = false;
+            achievement_firstTimeCity = false;
+            achievement_firstTimeShop = false;
+            achievement_firstTimeInventory = false;
+            achievement_firstCar = false;
+            achievement_firstZombie = false;
+            achievement_firstLootbox = false;
+            achievement_firstBuy = false;
+            achievement_firstSell = false;
+            achievement_firstEquip = false;
+            achievement_firstHeavyWeapon = false;
+            achievement_5car = false;
+            achievement_5zombie = false;
+            achievement_5lootbox = false;
+            achievement_blastingFire = false;
         }
 
         //Weapons
@@ -51,6 +72,23 @@
         public int currentlyEqquiped { get; set; }
 
         public int charID = -1; //0 - vagis, 1 - medikas, 2 - policija, 3 - gaisrine, -1 error
+
+        public bool achievement_Welcome { get; set; }
+        public bool achievement_firstTimeCity { get; set; }
+        public bool achievement_firstTimeShop { get; set; }
+        public bool achievement_firstTimeInventory { get; set; }
+        public bool achievement_firstCar { get; set; }
+        public bool achievement_firstZombie { get; set; }
+        public bool achievement_firstLootbox { get; set; }
+        public bool achievement_firstBuy { get; set; }
+        public bool achievement_firstSell { get; set; }
+        public bool achievement_firstEquip { get; set; }
+        public bool achievement_firstHeavyWeapon { get; set; }
+        public bool achievement_5car { get; set; }
+        public bool achievement_5zombie { get; set; }
+        public bool achievement_5lootbox { get; set; }
+        public bool achievement_blastingFire { get; set; }
+
 
         //https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/classes
     }

@@ -50,7 +50,7 @@ namespace GA_1
         public int HEALTHPACK_BOX_CLICK { get; }
 
         public int Health { get; }
-        public int healthPack { get; }
+        public int healthPack { get; set; }
 
 
 

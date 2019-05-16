@@ -163,6 +163,16 @@ namespace GA_1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gate {
+            get {
+                object obj = ResourceManager.GetObject("gate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap glock {
             get {
                 object obj = ResourceManager.GetObject("glock", resourceCulture);
@@ -201,6 +211,30 @@ namespace GA_1.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to !DOCTYPE html
+        ///html
+        ///	head
+        ///		style
+        ///			table {font-family arial, sans-serif;border-collapse collapse;width 100%;}
+        ///			td, th {border 1px solid #dddddd;text-align left;padding 8px;}
+        ///			trnth-child(even) {background-color #dddddd;}
+        ///			body, h1, table {font-family &apos;Roboto&apos;, sans-serif;}
+        ///		style
+        ///		link href=httpsfonts.googleapis.comcssfamily=Roboto rel=stylesheet 
+        ///	head
+        ///	body
+        ///		h1 align=center style=colorblack;zombieLand TOP 100h2
+        ///	  
+        ///		table align=center
+        ///			trthŽaidėjo nickasththPatirties taškaithth [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string html {
+            get {
+                return ResourceManager.GetString("html", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap inventory {
@@ -216,6 +250,26 @@ namespace GA_1.Properties {
         internal static System.Drawing.Bitmap knife {
             get {
                 object obj = ResourceManager.GetObject("knife", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lenta {
+            get {
+                object obj = ResourceManager.GetObject("lenta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lenta1 {
+            get {
+                object obj = ResourceManager.GetObject("lenta1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,6 +297,66 @@ namespace GA_1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap medikas_ak47 {
+            get {
+                object obj = ResourceManager.GetObject("medikas_ak47", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap medikas_bazooka {
+            get {
+                object obj = ResourceManager.GetObject("medikas_bazooka", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap medikas_deagle {
+            get {
+                object obj = ResourceManager.GetObject("medikas_deagle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap medikas_knife {
+            get {
+                object obj = ResourceManager.GetObject("medikas_knife", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap medikas_minigun {
+            get {
+                object obj = ResourceManager.GetObject("medikas_minigun", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap medikas_smg {
+            get {
+                object obj = ResourceManager.GetObject("medikas_smg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minigun {
             get {
                 object obj = ResourceManager.GetObject("minigun", resourceCulture);
@@ -256,6 +370,66 @@ namespace GA_1.Properties {
         internal static System.Drawing.Bitmap policija {
             get {
                 object obj = ResourceManager.GetObject("policija", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap policija_ak47 {
+            get {
+                object obj = ResourceManager.GetObject("policija_ak47", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap policija_baton {
+            get {
+                object obj = ResourceManager.GetObject("policija_baton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap policija_bazooka {
+            get {
+                object obj = ResourceManager.GetObject("policija_bazooka", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap policija_deagle {
+            get {
+                object obj = ResourceManager.GetObject("policija_deagle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap policija_minigun {
+            get {
+                object obj = ResourceManager.GetObject("policija_minigun", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap policija_smg {
+            get {
+                object obj = ResourceManager.GetObject("policija_smg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,9 +477,139 @@ namespace GA_1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ugniagesys_ak47 {
+            get {
+                object obj = ResourceManager.GetObject("ugniagesys_ak47", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ugniagesys_axe {
+            get {
+                object obj = ResourceManager.GetObject("ugniagesys_axe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ugniagesys_bazooka {
+            get {
+                object obj = ResourceManager.GetObject("ugniagesys_bazooka", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ugniagesys_deagle {
+            get {
+                object obj = ResourceManager.GetObject("ugniagesys_deagle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ugniagesys_minigun {
+            get {
+                object obj = ResourceManager.GetObject("ugniagesys_minigun", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ugniagesys_smg {
+            get {
+                object obj = ResourceManager.GetObject("ugniagesys_smg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vagis_ak47 {
+            get {
+                object obj = ResourceManager.GetObject("vagis_ak47", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vagis_bazooka {
+            get {
+                object obj = ResourceManager.GetObject("vagis_bazooka", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vagis_deagle {
+            get {
+                object obj = ResourceManager.GetObject("vagis_deagle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vagis_glock {
+            get {
+                object obj = ResourceManager.GetObject("vagis_glock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vagis_minigun {
+            get {
+                object obj = ResourceManager.GetObject("vagis_minigun", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vagis_smg {
+            get {
+                object obj = ResourceManager.GetObject("vagis_smg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap vagis2 {
             get {
                 object obj = ResourceManager.GetObject("vagis2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vags_knife {
+            get {
+                object obj = ResourceManager.GetObject("vags_knife", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

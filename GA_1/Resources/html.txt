@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			table {font-family: arial, sans-serif;border-collapse: collapse;width: 100%;}
+			td, th {border: 1px solid #dddddd;text-align: left;padding: 8px;}
+			tr:nth-child(even) {background-color: #dddddd;}
+			body, h1, table {font-family: 'Roboto', sans-serif;}
+		</style>
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+	</head>
+	<body>
+		<h1 align="center" style="color:black;">zombieLand TOP 100</h2>
+	  
+		<table align="center">
+			<tr><th>Žaidėjo nickas</th><th>Patirties taškai</th><th>Auksas</th><th>Nužudyta zombių</th><th>Apvogta automobilių</th></th><th>Atidaryta dėžių</th><th>Suma</th></tr>

@@ -111,9 +111,6 @@
     <None Include="Resources\medikas.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mainmap.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\city.png" />
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +178,97 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fire.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vagis_deagle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medikas_deagle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\policija_deagle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ugniagesys_deagle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vagis_glock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ugniagesys_axe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\policija_baton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medikas_knife.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vags_knife.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medikas_smg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\policija_smg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ugniagesys_smg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vagis_smg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\policija_ak47.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ugniagesys_ak47.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vagis_ak47.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medikas_ak47.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vagis_minigun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medikas_minigun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\policija_minigun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ugniagesys_minigun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\policija_bazooka.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ugniagesys_bazooka.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vagis_bazooka.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medikas_bazooka.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lenta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lenta1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mainmap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\html.txt" />
+    <Content Include="Resources\html.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
