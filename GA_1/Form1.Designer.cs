@@ -119,6 +119,11 @@
             this.pictureBox_invnetory_baton = new System.Windows.Forms.PictureBox();
             this.pictureBox_invnetory_knife = new System.Windows.Forms.PictureBox();
             this.pictureBox_inventory_GOBACK = new System.Windows.Forms.PictureBox();
+            this.panel_settings = new System.Windows.Forms.Panel();
+            this.button_settings = new System.Windows.Forms.Button();
+            this.button1_settings_create = new System.Windows.Forms.Button();
+            this.button_settings_load = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel_Map.SuspendLayout();
@@ -174,6 +179,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_invnetory_baton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_invnetory_knife)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_inventory_GOBACK)).BeginInit();
+            this.panel_settings.SuspendLayout();
             this.SuspendLayout();
             // 
             // notifyIcon1
@@ -185,11 +191,12 @@
             // panel1
             // 
             this.panel1.BackgroundImage = global::GA_1.Properties.Resources.zombieland;
+            this.panel1.Controls.Add(this.button_settings);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.bStartNewGame);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(784, 561);
+            this.panel1.Size = new System.Drawing.Size(390, 561);
             this.panel1.TabIndex = 3;
             // 
             // label1
@@ -1215,6 +1222,56 @@
             this.pictureBox_inventory_GOBACK.TabStop = false;
             this.pictureBox_inventory_GOBACK.Click += new System.EventHandler(this.pictureBox_inventory_GOBACK_Click);
             // 
+            // panel_settings
+            // 
+            this.panel_settings.Controls.Add(this.button1);
+            this.panel_settings.Controls.Add(this.button_settings_load);
+            this.panel_settings.Controls.Add(this.button1_settings_create);
+            this.panel_settings.Location = new System.Drawing.Point(391, 0);
+            this.panel_settings.Name = "panel_settings";
+            this.panel_settings.Size = new System.Drawing.Size(393, 561);
+            this.panel_settings.TabIndex = 16;
+            // 
+            // button_settings
+            // 
+            this.button_settings.Location = new System.Drawing.Point(256, 340);
+            this.button_settings.Name = "button_settings";
+            this.button_settings.Size = new System.Drawing.Size(327, 75);
+            this.button_settings.TabIndex = 3;
+            this.button_settings.Text = "Kurti / Užkrauti savo nustatymus";
+            this.button_settings.UseVisualStyleBackColor = true;
+            this.button_settings.Click += new System.EventHandler(this.button_settings_Click);
+            // 
+            // button1_settings_create
+            // 
+            this.button1_settings_create.Location = new System.Drawing.Point(256, 185);
+            this.button1_settings_create.Name = "button1_settings_create";
+            this.button1_settings_create.Size = new System.Drawing.Size(327, 75);
+            this.button1_settings_create.TabIndex = 4;
+            this.button1_settings_create.Text = "Kurti savo nustatymus";
+            this.button1_settings_create.UseVisualStyleBackColor = true;
+            this.button1_settings_create.Click += new System.EventHandler(this.button1_settings_create_Click);
+            // 
+            // button_settings_load
+            // 
+            this.button_settings_load.Location = new System.Drawing.Point(256, 263);
+            this.button_settings_load.Name = "button_settings_load";
+            this.button_settings_load.Size = new System.Drawing.Size(327, 75);
+            this.button_settings_load.TabIndex = 5;
+            this.button_settings_load.Text = "Užkrauti nustatymus";
+            this.button_settings_load.UseVisualStyleBackColor = true;
+            this.button_settings_load.Click += new System.EventHandler(this.button_settings_load_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(256, 340);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(327, 75);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Pagrindinis meniu";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1226,9 +1283,10 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel_Map);
             this.Controls.Add(this.panel_city);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_shop);
             this.Controls.Add(this.panel_inventory);
+            this.Controls.Add(this.panel_settings);
+            this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "zombieLand";
@@ -1293,6 +1351,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_invnetory_baton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_invnetory_knife)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_inventory_GOBACK)).EndInit();
+            this.panel_settings.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1390,6 +1449,11 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox_leavegame;
+        private System.Windows.Forms.Button button_settings;
+        private System.Windows.Forms.Panel panel_settings;
+        private System.Windows.Forms.Button button_settings_load;
+        private System.Windows.Forms.Button button1_settings_create;
+        private System.Windows.Forms.Button button1;
     }
 }
 

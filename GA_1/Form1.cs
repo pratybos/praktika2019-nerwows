@@ -5,6 +5,7 @@ using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
+using Newtonsoft.Json.Linq;
 
 namespace GA_1
 {
@@ -23,6 +24,8 @@ namespace GA_1
         public Form1()
         {
             InitializeComponent();
+
+            panel_settings.Location = new Point(1000, 1000);
 
             //KAINU NUSTATYMAI SHOPUJ
             label_deagle_price.Text = "Kaina: " + _CFG.SHOP_DEAGLE_PRICE.ToString();
@@ -44,8 +47,12 @@ namespace GA_1
             this.MaximumSize = new Size(800, 600);
             this.MinimumSize = new Size(800, 600);
 
-            panel_achievements.Size = new Size(784, 561);
-            panel_city.Size = new Size(784, 561);
+            Size panelSize = new Size(784, 561);
+
+            panel1.Size = panelSize;
+            panel_achievements.Size = panelSize;
+            panel_city.Size = panelSize;
+            panel_settings.Size = panelSize;
 
             resetCityFormElements();
         }
@@ -580,9 +587,8 @@ namespace GA_1
             {
                 string input = Interaction.InputBox("Įveskite skaičių:\n1 - A-Z pagal sumą\n2 - A-Z pagal patirtį\n3 - A-Z pagal auksą\n4 - A-Z pagal nužudytus zombius\n5 - A-Z pagal apvogtus automobilius\n6 - A-Z pagal atidarytas dėžes", "", "1", -1, -1);
                 OutPut(Convert.ToInt32(input));
+                Application.Exit();
             }
-
-            Application.Exit();
         }
 
         #endregion
@@ -1470,122 +1476,245 @@ namespace GA_1
             TOP[] _TOP = new TOP[101];
             int cTOP_ID = 0;
 
-            string[] pLines = File.ReadAllLines("OUTPUT.HTML");
-
-            for (int i = 0; i < pLines.Length; i++)
+            if (File.Exists("OUTPUT.HTML"))
             {
-                if (pLines[i].Contains("<tr><td>"))
+                string[] pLines = File.ReadAllLines("OUTPUT.HTML");
+
+                for (int i = 0; i < pLines.Length; i++)
                 {
-                    string[] lineData = pLines[i].Split(new string[] { "</td><td>" }, StringSplitOptions.None);
+                    if (pLines[i].Contains("<tr><td>"))
+                    {
+                        string[] lineData = pLines[i].Split(new string[] { "</td><td>" }, StringSplitOptions.None);
 
-                    lineData[0] = lineData[0].Replace("<tr><td>", "");
-                    lineData[lineData.Length - 1] = lineData[lineData.Length - 1].Replace("</td></tr>", "");
+                        lineData[0] = lineData[0].Replace("<tr><td>", "");
+                        lineData[lineData.Length - 1] = lineData[lineData.Length - 1].Replace("</td></tr>", "");
 
-                    _TOP[cTOP_ID].Name = lineData[0];
-                    _TOP[cTOP_ID].Experience = Convert.ToInt32(lineData[1]);
-                    _TOP[cTOP_ID].Money = Convert.ToInt32(lineData[2]);
-                    _TOP[cTOP_ID].killCount = Convert.ToInt32(lineData[3]);
-                    _TOP[cTOP_ID].carCount = Convert.ToInt32(lineData[4]);
-                    _TOP[cTOP_ID].lootboxCount = Convert.ToInt32(lineData[5]);
-                    _TOP[cTOP_ID].Sum = _TOP[cTOP_ID].Experience + _TOP[cTOP_ID].Money + _TOP[cTOP_ID].killCount + _TOP[cTOP_ID].carCount + _TOP[cTOP_ID].lootboxCount;
+                        _TOP[cTOP_ID].Name = lineData[0];
+                        _TOP[cTOP_ID].Experience = Convert.ToInt32(lineData[1]);
+                        _TOP[cTOP_ID].Money = Convert.ToInt32(lineData[2]);
+                        _TOP[cTOP_ID].killCount = Convert.ToInt32(lineData[3]);
+                        _TOP[cTOP_ID].carCount = Convert.ToInt32(lineData[4]);
+                        _TOP[cTOP_ID].lootboxCount = Convert.ToInt32(lineData[5]);
+                        _TOP[cTOP_ID].Sum = _TOP[cTOP_ID].Experience + _TOP[cTOP_ID].Money + _TOP[cTOP_ID].killCount + _TOP[cTOP_ID].carCount + _TOP[cTOP_ID].lootboxCount;
 
-                    cTOP_ID++;
+                        cTOP_ID++;
+                    }
                 }
-            }
 
-            _TOP[cTOP_ID].Name = _Character.Name;
-            _TOP[cTOP_ID].Experience = _Character.Experience;
-            _TOP[cTOP_ID].Money = _Character.Money;
-            _TOP[cTOP_ID].killCount = _Character.killCount;
-            _TOP[cTOP_ID].carCount = _Character.carCount;
-            _TOP[cTOP_ID].lootboxCount = _Character.lootboxCount;
-            _TOP[cTOP_ID].Sum = _Character.Experience + _Character.Money + _Character.killCount + _Character.carCount + _Character.lootboxCount;
+                _TOP[cTOP_ID].Name = _Character.Name;
+                _TOP[cTOP_ID].Experience = _Character.Experience;
+                _TOP[cTOP_ID].Money = _Character.Money;
+                _TOP[cTOP_ID].killCount = _Character.killCount;
+                _TOP[cTOP_ID].carCount = _Character.carCount;
+                _TOP[cTOP_ID].lootboxCount = _Character.lootboxCount;
+                _TOP[cTOP_ID].Sum = _Character.Experience + _Character.Money + _Character.killCount + _Character.carCount + _Character.lootboxCount;
 
-            cTOP_ID++;
+                cTOP_ID++;
 
-            //Rikiavimas
+                //Rikiavimas
 
-            for (int a = 0; a < cTOP_ID; a++)
-            {
-                for (int b = 0; b < cTOP_ID; b++)
+                for (int a = 0; a < cTOP_ID; a++)
                 {
-                    int firstVal = 0;
-                    int secondVal = 0;
+                    for (int b = 0; b < cTOP_ID; b++)
+                    {
+                        int firstVal = 0;
+                        int secondVal = 0;
 
-                    if (filterType == 1)
-                    {
-                        firstVal = _TOP[a].Sum;
-                        secondVal = _TOP[b].Sum;
-                    }
-                    if (filterType == 2)
-                    {
-                        firstVal = _TOP[a].Experience;
-                        secondVal = _TOP[b].Experience;
-                    }
-                    if (filterType == 3)
-                    {
-                        firstVal = _TOP[a].Money;
-                        secondVal = _TOP[b].Money;
-                    }
-                    if (filterType == 4)
-                    {
-                        firstVal = _TOP[a].killCount;
-                        secondVal = _TOP[b].killCount;
-                    }
-                    if (filterType == 5)
-                    {
-                        firstVal = _TOP[a].carCount;
-                        secondVal = _TOP[b].carCount;
-                    }
-                    if (filterType == 6)
-                    {
-                        firstVal = _TOP[a].lootboxCount;
-                        secondVal = _TOP[b].lootboxCount;
-                    }
-
-                    if (firstVal > secondVal)
-                    {
-                        TOP tmpTop = new TOP()
+                        if (filterType == 1)
                         {
-                            Name = _TOP[b].Name,
-                            Experience = _TOP[b].Experience,
-                            Money = _TOP[b].Money,
-                            killCount = _TOP[b].killCount,
-                            carCount = _TOP[b].carCount,
-                            lootboxCount = _TOP[b].lootboxCount,
-                            Sum = _TOP[b].Sum
-                        };
+                            firstVal = _TOP[a].Sum;
+                            secondVal = _TOP[b].Sum;
+                        }
+                        if (filterType == 2)
+                        {
+                            firstVal = _TOP[a].Experience;
+                            secondVal = _TOP[b].Experience;
+                        }
+                        if (filterType == 3)
+                        {
+                            firstVal = _TOP[a].Money;
+                            secondVal = _TOP[b].Money;
+                        }
+                        if (filterType == 4)
+                        {
+                            firstVal = _TOP[a].killCount;
+                            secondVal = _TOP[b].killCount;
+                        }
+                        if (filterType == 5)
+                        {
+                            firstVal = _TOP[a].carCount;
+                            secondVal = _TOP[b].carCount;
+                        }
+                        if (filterType == 6)
+                        {
+                            firstVal = _TOP[a].lootboxCount;
+                            secondVal = _TOP[b].lootboxCount;
+                        }
 
-                        _TOP[b] = _TOP[a];
-                        _TOP[a] = tmpTop;
+                        if (firstVal > secondVal)
+                        {
+                            TOP tmpTop = new TOP()
+                            {
+                                Name = _TOP[b].Name,
+                                Experience = _TOP[b].Experience,
+                                Money = _TOP[b].Money,
+                                killCount = _TOP[b].killCount,
+                                carCount = _TOP[b].carCount,
+                                lootboxCount = _TOP[b].lootboxCount,
+                                Sum = _TOP[b].Sum
+                            };
+
+                            _TOP[b] = _TOP[a];
+                            _TOP[a] = tmpTop;
+                        }
                     }
                 }
+
+                string output = GA_1.Properties.Resources.html;
+
+                for (int i = 0; i < cTOP_ID; i++)
+                    output += "<tr><td>" +
+                    _TOP[i].Name + "</td><td>" +
+                    _TOP[i].Experience + "</td><td>" +
+                    _TOP[i].Money + "</td><td>" +
+                    _TOP[i].killCount + "</td><td>" +
+                    _TOP[i].carCount + "</td><td>" +
+                    _TOP[i].lootboxCount + "</td><td>" +
+                    (_TOP[i].Experience + _TOP[i].Money + _TOP[i].killCount + _TOP[i].carCount + _TOP[i].lootboxCount) + "</td></tr>\n";
+
+                output += "</table></body></html>";
+
+                File.WriteAllText("OUTPUT.HTML", output);
+            }
+            else
+            {
+                string output = GA_1.Properties.Resources.html;
+
+                    output += "<tr><td>" +
+                    _Character.Name + "</td><td>" +
+                    _Character.Experience + "</td><td>" +
+                    _Character.Money + "</td><td>" +
+                    _Character.killCount + "</td><td>" +
+                    _Character.carCount + "</td><td>" +
+                    _Character.lootboxCount + "</td><td>" +
+                    (_Character.Experience + _Character.Money + _Character.killCount + _Character.carCount + _Character.lootboxCount) + "</td></tr>\n";
+
+                output += "</table></body></html>";
+
+                File.WriteAllText("OUTPUT.HTML", output);
             }
 
-            string output = GA_1.Properties.Resources.html;
-
-            for (int i = 0; i < cTOP_ID; i++)
-                output += "<tr><td>" +
-                _TOP[i].Name + "</td><td>" +
-                _TOP[i].Experience + "</td><td>" +
-                _TOP[i].Money + "</td><td>" +
-                _TOP[i].killCount + "</td><td>" +
-                _TOP[i].carCount + "</td><td>" +
-                _TOP[i].lootboxCount + "</td><td>" +
-                (_TOP[i].Experience + _TOP[i].Money + _TOP[i].killCount + _TOP[i].carCount + _TOP[i].lootboxCount) + "</td></tr>\n";
-
-            output += "</table></body></html>";
-
-            File.WriteAllText("OUTPUT.HTML", output);
 
             Process.Start("OUTPUT.HTML");
         }
 
         #endregion
 
+        #region "JSON import"
+
+        void LoadCFG(string fPath)
+        {
+            try
+            {
+                string sJSON = File.ReadAllText(fPath);
+
+                dynamic JSON_DATA = JObject.Parse(sJSON);
+
+                string cityMapImage = JSON_DATA.cityMapImage;
+                string zombieModel_1 = JSON_DATA.zombieModel_1;
+                string zombieModel_2 = JSON_DATA.zombieModel_2;
+                string zombieModel_3 = JSON_DATA.zombieModel_3;
+                string zombieModel_4 = JSON_DATA.zombieModel_4;
+                string carModel_1 = JSON_DATA.carModel_1;
+                string carModel_2 = JSON_DATA.carModel_2;
+                string carModel_3 = JSON_DATA.carModel_3;
+                string lootboxModel = JSON_DATA.lootboxModel;
+                string fireModel = JSON_DATA.fireModel;
+
+                //MessageBox.Show(cityMapImage);
+                //MessageBox.Show(zombieModel_1);
+                //MessageBox.Show(fireModel);
+
+                if (cityMapImage != "")
+                {
+                    Bitmap bmp = new Bitmap(cityMapImage);
+                    panel_city.BackgroundImage = bmp;
+                }
+                if (zombieModel_1 != "")
+                {
+                    Bitmap bmp = new Bitmap(zombieModel_1);
+                    pictureBox_zombie1.Image = bmp;
+                }
+                if (zombieModel_2 != "")
+                {
+                    Bitmap bmp = new Bitmap(zombieModel_2);
+                    pictureBox_zombie2.Image = bmp;
+                }
+                if (zombieModel_3 != "")
+                {
+                    Bitmap bmp = new Bitmap(zombieModel_3);
+                    pictureBox_zombie3.Image = bmp;
+                }
+                if (zombieModel_4 != "")
+                {
+                    Bitmap bmp = new Bitmap(zombieModel_4);
+                    pictureBox_zombie4.Image = bmp;
+                }
+                if (carModel_1 != "")
+                {
+                    Bitmap bmp = new Bitmap(carModel_1);
+                    pictureBox_car1.Image = bmp;
+                }
+                if (carModel_2 != "")
+                {
+                    Bitmap bmp = new Bitmap(carModel_2);
+                    pictureBox_car2.Image = bmp;
+                }
+                if (carModel_3 != "")
+                {
+                    Bitmap bmp = new Bitmap(carModel_3);
+                    pictureBox_car3.Image = bmp;
+                }
+                if (lootboxModel != "")
+                {
+                    Bitmap bmp = new Bitmap(lootboxModel);
+                    pictureBox_supplycrate.Image = bmp;
+                }
+                if (fireModel != "")
+                {
+                    Bitmap bmp = new Bitmap(fireModel);
+                    pictureBox_fire1.Image = bmp;
+                    pictureBox_fire2.Image = bmp;
+                    pictureBox_fire3.Image = bmp;
+                    pictureBox_fire4.Image = bmp;
+                }
+                notifyIcon1.ShowBalloonTip(2000, "Nustatymai užkrauti!", "Sėkmingai užkrovei nustatymus!", ToolTipIcon.Info);
+
+                switchPanels(panel_settings, panel1);
+            }
+            catch
+            {
+                notifyIcon1.ShowBalloonTip(2000, "KLAIDA!", "Nepavyko užkrauti nustatymų!\nBandyk dar kartą.", ToolTipIcon.Error);
+            }
+        }
+
+        void saveCFG()
+        {
+            dynamic d = JObject.Parse("{number:1000, str:'string', array: [1,2,3,4,5,6]}");
+
+            string a = d.number;
+            string b = d.str;
+            int c = d.array.Count;
+
+            MessageBox.Show(a);
+            MessageBox.Show(b);
+            MessageBox.Show(c.ToString());
+        }
+
+        #endregion
+
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
         private void panel_city_Paint(object sender, PaintEventArgs e)
@@ -1596,6 +1725,95 @@ namespace GA_1
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_settings_Click(object sender, EventArgs e)
+        {
+            switchPanels(panel1, panel_settings);
+        }
+
+        private void button_settings_load_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+                openFileDialog1.Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*";
+
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                    LoadCFG(openFileDialog1.FileName);
+            }
+            catch
+            {
+                notifyIcon1.ShowBalloonTip(2000, "KLAIDA!", "Įvyko klaida atidarant nustatymų failą.", ToolTipIcon.Error);
+            }
+        }
+
+        private void button1_settings_create_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MessageBox.Show("Daugelį šio žaidimo veikėjų, modelių, paveikslėlių galima pakeisti savais.\n" +
+                                "Po šios žinutės seks langų serija, kuriuose turėsi nurodyti kelią iki savo modelių.\n" +
+                                "Jeigu kažkurio iš modelių nenori pakeisti, tiesiog palik tuščią laukelį ir spausk ENTER / OK.");
+
+                string cityMapImage = Interaction.InputBox("Nurodyk kelią iki savo norimo miesto paveikslėlio:\nRekomenduojamas dydis: 800x600", "", "", -1, -1);
+                string zombieModel_1 = Interaction.InputBox("Nurodyk kelią iki savo norimo 1-ojo zombio paveikslėlio:\nRekomenduojamas dydis: 31x42", "", "", -1, -1);
+                string zombieModel_2 = Interaction.InputBox("Nurodyk kelią iki savo norimo 2-ojo zombio paveikslėlio:\nRekomenduojamas dydis: 31x42", "", "", -1, -1);
+                string zombieModel_3 = Interaction.InputBox("Nurodyk kelią iki savo norimo 3-ojo zombio paveikslėlio:\nRekomenduojamas dydis: 31x42", "", "", -1, -1);
+                string zombieModel_4 = Interaction.InputBox("Nurodyk kelią iki savo norimo 4-ojo zombio paveikslėlio:\nRekomenduojamas dydis: 31x42", "", "", -1, -1);
+                string carModel_1 = Interaction.InputBox("Nurodyk kelią iki savo norimo 1-ojo mašinos paveikslėlio:\nRekomenduojamas dydis: 101x35", "", "", -1, -1);
+                string carModel_2 = Interaction.InputBox("Nurodyk kelią iki savo norimo 2-ojo mašinos paveikslėlio:\nRekomenduojamas dydis: 101x35", "", "", -1, -1);
+                string carModel_3 = Interaction.InputBox("Nurodyk kelią iki savo norimo 3-ojo mašinos paveikslėlio:\nRekomenduojamas dydis: 101x35", "", "", -1, -1);
+                string lootboxModel = Interaction.InputBox("Nurodyk kelią iki savo norimo dėžės paveikslėlio:\nRekomenduojamas dydis: 35x35", "", "", -1, -1);
+                string fireModel = Interaction.InputBox("Nurodyk kelią iki savo norimo ugnies paveikslėlio:\nRekomenduojamas dydis: 31x42", "", "", -1, -1);
+
+                JObject Output =
+        new JObject(
+                    new JProperty("cityMapImage", cityMapImage),
+                    new JProperty("zombieModel_1", zombieModel_1),
+                    new JProperty("zombieModel_2", zombieModel_2),
+                    new JProperty("zombieModel_3", zombieModel_3),
+                    new JProperty("zombieModel_4", zombieModel_4),
+                    new JProperty("carModel_1", carModel_1),
+                    new JProperty("carModel_2", carModel_2),
+                    new JProperty("carModel_3", carModel_3),
+                    new JProperty("lootboxModel", lootboxModel),
+                    new JProperty("fireModel", fireModel)
+                    );
+
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "JSON file|*.json";
+                saveFileDialog1.Title = "Save an JSON file";
+                saveFileDialog1.ShowDialog();
+
+                string savePath = "";
+
+                if (saveFileDialog1.FileName != "")
+                {
+                    File.WriteAllText(saveFileDialog1.FileName, Output.ToString());
+                    savePath = saveFileDialog1.FileName;
+                }
+
+
+                notifyIcon1.ShowBalloonTip(2000, "Nustatymai išsaugoti!", "Sėkmingai išsaugojai nustatymus!", ToolTipIcon.Info);
+
+                DialogResult result = MessageBox.Show("Ar norite užkrauti savo ką tik išsaugotus nustatymus?", "Patvirtinimas", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                    LoadCFG(savePath);
+
+                switchPanels(panel_settings, panel1);
+            }
+            catch
+            {
+                notifyIcon1.ShowBalloonTip(2000, "KLAIDA!", "Nepavyko sukurti ir išsaugoti nustatymų!", ToolTipIcon.Error);
+            }
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            switchPanels(panel_settings, panel1);
         }
     }
 }
