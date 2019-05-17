@@ -13,4 +13,5 @@ praktika2019-nerwows\
   |\
   +-- README.MD
 
-Other important information: **Papildoma informacija**: **GA_1** programos realizacijai yra naudojama Microsoft.VisualBasic biblioteka. Šią biblioteką privalote įsidiegti prieš paleidžiant programą. Tai padaryti galite parsisiųsdami VB.NET programavimo kalbos paketą studijoje</a>.
+Other important information: **Papildoma informacija**: **GA_1** programos realizacijai yra naudojama Microsoft.VisualBasic biblioteka. Šią biblioteką privalote įsidiegti prieš paleidžiant programą. Tai padaryti galite parsisiųsdami VB.NET programavimo kalbos paketą studijoje.
+																									  Newtonsoft.Json biblioteka. Šią biblioteką privalote įsidiegti prieš paleidžiant programą. Tai padaryti galite su NuGet Packet Manager.
